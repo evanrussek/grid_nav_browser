@@ -66,12 +66,9 @@ jsPsych.plugins["grid-episode"] = (function() {
         accept: null,
       };
 
-    // default rewrad val (to record in case trial time lapses)
-    var reward_val = 0;
 
-
-
-
+      // set current position
+      var current_pos = trial.start_pos;
 
     ///////////////////////////////////////////////////////////////////////////
     ///////////////// PLACE THE SVG CANVAS AND BACKGROUND ON WHICH WE'll DRAW THINGS ////
@@ -101,8 +98,6 @@ jsPsych.plugins["grid-episode"] = (function() {
     ///////////////// START THE TRIAL ////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////
 
-    // set current position
-    var current_pos = trial.start_pos;
     // wait 2000 msec, and then call first part of trial (this is the first thing called after initial display)
     jsPsych.pluginAPI.setTimeout(function() {
       // show the position (for debugging)
